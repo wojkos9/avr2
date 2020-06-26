@@ -1,0 +1,225 @@
+rRead
+
+Read Low Fuse  hex: 02  bin: 00000010
+Read High Fuse hex: 02  bin: 00000010
+Read Ext Fuse  hex: 02  bin: 00000010
+
+
+Enter a command:
+l 255Proposed Low Fuse  Invalid input
+Selected mode: ATMEGA
+Typical fuse values:
+          blank ATmega328P    UNO     Duemilanove328
+                    L 0x62   L 0xFF   L 0xFF
+                    H 0xD9   H 0xDE   H 0xDA
+                    X 0xFF   X 0xFD   X 0xFD
+
+Proposed Low Fuse  hex: 62  bin: 01100010
+Proposed High Fuse hex: D9  bin: 11011001
+Proposed Ext Fuse  hex: FF  bin: 11111111
+
+Commands:
+1 select mode ATmegaXX8 28-pin
+2 select mode ATtiny2313
+3 select mode ATtiny 8-pin / HVSP
+L, H, or X followed by a number changes the proposed fuse
+B or U changes the proposed fuses to Blank or Uno
+R reads the current fuses from the target AVR
+W writes the proposed fuses to the target AVR
+Number format accepted is hex in the form FF or 0xFF
+    or decimal in the form NUM255
+    or binary in the form BIN11111111
+Upper or lower case is acceptable
+
+Enter a command:
+lffwProposed Low Fuse  hex: FF  bin: 11111111
+
+Enter a command:
+rRead
+
+Read Low Fuse  hex: 5B  bin: 01011011
+Read High Fuse hex: 5B  bin: 01011011
+Read Ext Fuse  hex: 5B  bin: 01011011
+
+
+Enter a command:
+lffProposed Low Fuse  hex: FF  bin: 11111111
+
+Enter a command:
+wWrite
+Burning fuses
+רר
+Burn complete
+
+
+Read Low Fuse  hex: 5B  bin: 01011011
+Read High Fuse hex: 5B  bin: 01011011
+Read Ext Fuse  hex: 5B  bin: 01011011
+
+
+Enter a command:
+hdaProposed High Fuse hex: DA  bin: 11011010
+
+Enter a command:
+wWrite
+Burning fuses
+ררר
+Burn complete
+
+
+Read Low Fuse  hex: 5B  bin: 01011011
+Read High Fuse hex: 5B  bin: 01011011
+Read Ext Fuse  hex: 5B  bin: 01011011
+
+
+Enter a command:
+rRead
+ÿ
+Read Low Fuse  hex: 5B  bin: 01011011
+Read High Fuse hex: 5B  bin: 01011011
+Read Ext Fuse  hex: 5B  bin: 01011011
+
+
+Enter a command:
+xfdProposed Ext Fuse  hex: FD  bin: 11111101
+
+Enter a command:
+wWrite
+Burning fuses
+רר
+Burn complete
+
+
+Read Low Fuse  hex: 5B  bin: 01011011
+Read High Fuse hex: 5B  bin: 01011011
+Read Ext Fuse  hex: 5B  bin: 01011011
+
+
+Enter a command:
+1ATMEGA mode
+
+Enter a command:
+u
+Set Proposed Uno Fuses
+Selected mode: ATMEGA
+Typical fuse values:
+          blank ATmega328P    UNO     Duemilanove328
+                    L 0x62   L 0xFF   L 0xFF
+                    H 0xD9   H 0xDE   H 0xDA
+                    X 0xFF   X 0xFD   X 0xFD
+
+Proposed Low Fuse  hex: FF  bin: 11111111
+Proposed High Fuse hex: DE  bin: 11011110
+Proposed Ext Fuse  hex: FD  bin: 11111101
+
+Commands:
+1 select mode ATmegaXX8 28-pin
+2 select mode ATtiny2313
+3 select mode ATtiny 8-pin / HVSP
+L, H, or X followed by a number changes the proposed fuse
+B or U changes the proposed fuses to Blank or Uno
+R reads the current fuses from the target AVR
+W writes the proposed fuses to the target AVR
+Number format accepted is hex in the form FF or 0xFF
+    or decimal in the form NUM255
+    or binary in the form BIN11111111
+Upper or lower case is acceptable
+
+Enter a command:
+uSet Proposed Uno Fuses
+Selected mode: ATMEGA
+Typical fuse values:
+          blank ATmega328P    UNO     Duemilanove328
+                    L 0x62   L 0xFF   L 0xFF
+                    H 0xD9   H 0xDE   H 0xDA
+                    X 0xFF   X 0xFD   X 0xFD
+
+Proposed Low Fuse  hex: FF  bin: 11111111
+Proposed High Fuse hex: DE  bin: 11011110
+Proposed Ext Fuse  hex: FD  bin: 11111101
+
+Commands:
+1 select mode ATmegaXX8 28-pin
+2 select mode ATtiny2313
+3 select mode ATtiny 8-pin / HVSP
+L, H, or X followed by a number changes the proposed fuse
+B or U changes the proposed fuses to Blank or Uno
+R reads the current fuses from the target AVR
+W writes the proposed fuses to the target AVR
+Number format accepted is hex in the form FF or 0xFF
+    or decimal in the form NUM255
+    or binary in the form BIN11111111
+Upper or lower case is acceptable
+
+Enter a command:
+wWrite
+Burning fuses
+רר
+Burn complete
+
+
+Read Low Fuse  hex: 5B  bin: 01011011
+Read High Fuse hex: 5B  bin: 01011011
+Read Ext Fuse  hex: 5B  bin: 01011011
+
+
+Enter a command:
+rRead
+
+Read Low Fuse  hex: 02  bin: 00000010
+Read High Fuse hex: 02  bin: 00000010
+Read Ext Fuse  hex: 02  bin: 00000010
+
+
+Enter a command:
+uSet Proposed Uno Fuses
+Selected mode: ATMEGA
+Typical fuse values:
+          blank ATmega328P    UNO     Duemilanove328
+                    L 0x62   L 0xFF   L 0xFF
+                    H 0xD9   H 0xDE   H 0xDA
+                    X 0xFF   X 0xFD   X 0xFD
+
+Proposed Low Fuse  hex: FF  bin: 11111111
+Proposed High Fuse hex: DE  bin: 11011110
+Proposed Ext Fuse  hex: FD  bin: 11111101
+
+Commands:
+1 select mode ATmegaXX8 28-pin
+2 select mode ATtiny2313
+3 select mode ATtiny 8-pin / HVSP
+L, H, or X followed by a number changes the proposed fuse
+B or U changes the proposed fuses to Blank or Uno
+R reads the current fuses from the target AVR
+W writes the proposed fuses to the target AVR
+Number format accepted is hex in the form FF or 0xFF
+    or decimal in the form NUM255
+    or binary in the form BIN11111111
+Upper or lower case is acceptable
+
+Enter a command:
+wWrite
+Burning fuses
+ננ
+Burn complete
+
+
+Read Low Fuse  hex: 5B  bin: 01011011
+Read High Fuse hex: 5B  bin: 01011011
+Read Ext Fuse  hex: 5B  bin: 01011011
+
+
+Enter a command:
+wWrite
+Burning fuses
+רר
+Burn complete
+
+
+Read Low Fuse  hex: 5B  bin: 01011011
+Read High Fuse hex: 5B  bin: 01011011
+Read Ext Fuse  hex: 5B  bin: 01011011
+
+
+Enter a command:
+ÿ
