@@ -1,0 +1,2 @@
+#!/bin/bash
+avr-gcc -mmcu=atmega328p -std=gnu99 $1.c -o$@ -O3 -DF_CPU=17360000 && sudo avrdude -p atmega328p -c usbasp -U flash:w:$1
