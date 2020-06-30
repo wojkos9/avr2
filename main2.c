@@ -34,7 +34,7 @@ void motor_control(uint8_t id, uint8_t s) {
 void loop() {
     if (motor) {
         motor_control(MOT1, s1);
-        motor_control(MOT2, 20-s2);
+        motor_control(MOT2, 20-(s2+1));
     }
     
 }
@@ -60,7 +60,11 @@ uint8_t sens = 0;
 uint8_t sid = 0;
 #define NSENS 3
 
+char sens2c(uint8_t id) {
+    return id?(id==1?'M':'P'):'L';
+}
 
+uint16_t val[3];
 
 ISR(ADC_vect)
 {
@@ -71,7 +75,15 @@ ISR(ADC_vect)
     } else {
         sens &= ~(1<<sid);
     }
+    val[sid] = r;
     sid = (sid+1)%NSENS;
+    // sendc(sens2c(sid));
+    // sendc(' ');
+    // sendn(r);
+    // sendc('\r');
+    // sendc('\n');
+    
+
     // pins 3,4,5
     // sendc('s');
     // sendn((_BV(REFS0) | (sid+3)));
@@ -105,6 +117,8 @@ void main() {
 
     sei();
     
+    const uint8_t speed = 5;
+
     for(;;) {
         loop();
 
@@ -123,42 +137,48 @@ void main() {
                 break;
             case 7:
             case 2:
-                s1 = 20;
-                s2 = 20;
+                s1 = s2 = 10+speed;
 
                 break;
 
             case 3:
-                s1 = 20;
-                s2 = 15;
+                s1 = 10 + speed;
+                s2 = 10 + speed/2;
                 break;
 
             case 6:
-                s1 = 15;
-                s2 = 20;
+                s1 = 10 + speed/2;
+                s2 = 10 + speed;
                 break;
 
             case 1:
-                s1 = 20;
+                s1 = 10 + speed;
                 s2 = 10;
                 break;
 
             case 4:
                 s1 = 10;
-                s2 = 20;
+                s2 = 10 + speed;
                 break;
         }
-        // sendc('0'+((sens & 4)?1:0));
-        // sendc('0'+((sens & 2)?1:0));
-        // sendc('0'+((sens & 1)?1:0));
-        // sendc(' ');
-        // sendn(s1);
-        // sendc(' ');
-        // sendn(s2);
-        // sendc('\r');
-        // sendc('\n');
+        for (uint8_t i = 0; i < NSENS; i++) {
+            sendn(val[NSENS-1-i]);
+            sendc(' ');
+        }
+        sendc('\r');
+        sendc('\n');
 
+        sendc('0'+((sens & 4)?1:0));
+        sendc('0'+((sens & 2)?1:0));
+        sendc('0'+((sens & 1)?1:0));
+        sendc(' ');
+        sendn(s1);
+        sendc(' ');
+        sendn(s2);
+        sendc('\r');
+        sendc('\n');
 
+        _delay_ms(10);
         //sendc(sens+'0');
     }
 

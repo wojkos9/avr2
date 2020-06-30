@@ -68,6 +68,22 @@ uint8_t sens = 0;
 uint8_t sid = 0;
 #define NSENS 3
 
+void sendn(int16_t n) {
+    const int maxc = 5;
+    char t[maxc];
+    uint8_t i = 0;
+    if (n<0) {
+        sendc('-');
+        n = -n;
+    }
+    do {
+        t[maxc-++i]='0'+n%10;
+        n /= 10;
+    } while (n);
+    while (i) {
+        sendc(t[maxc- i--]);
+    }
+}
 
 
 ISR(ADC_vect)
@@ -78,6 +94,7 @@ ISR(ADC_vect)
     } else {
         sens &= ~(1<<sid);
     }
+
     sid = (sid+1)%NSENS;
     ADMUX = _BV(REFS0) | sid;
     ADCSRA |= _BV(ADSC);
@@ -158,11 +175,9 @@ void main() {
                 s2 = 10;
                 break;
         }
-        sendc('0'+s1);
-        sendc('0'+s2);
-        sendc('\r');
-        sendc('\n');
-
+        // sendc('0'+sens);
+        // sendc('\r');
+        // sendc('\n');
 
         //sendc(sens+'0');
     }
